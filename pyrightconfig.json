@@ -1,0 +1,14 @@
+{
+  "exclude": [
+    "**/__pycache__",
+  ],
+  "extraPaths": [],
+  "typeCheckingMode": "basic",
+  "reportMissingImports": true,
+  "reportUnusedImport": false,
+  "reportMissingTypeStubs": false,
+  "reportUnknownMemberType": false,
+  "reportOptionalMemberAccess": false,
+  "reportFunctionMemberAccess": false,
+  "reportAttributeAccessIssue": false
+}
