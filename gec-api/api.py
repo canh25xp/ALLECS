@@ -1,13 +1,5 @@
-from os.path import join, dirname
-import sys
-
 from flask import Flask, jsonify, request
 from flask_restful import Api, Resource
-
-import tensorflow as tf
-import tensorflow_text  # Required to run exported model.
-
-from urllib.parse import unquote
 
 import components.gector.predict as gector
 import components.t5.predict as t5
