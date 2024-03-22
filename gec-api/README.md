@@ -12,3 +12,11 @@ This module contains the modified code of [GECToR](https://github.com/grammarly/
 
 ## Adding other base systems
 To add other base systems, you need to add the code in the `components` folder and edit `api.py`. 
+
+
+## Test the API with Curl
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"model": "GECToR-Roberta", "text_input_list": ["He do this", "I is a engineer"]}' http://localhost:3000/components/model
+# Or
+curl -X POST -H "Content-Type: application/json" -d @request.json http://localhost:3000/components/model
+```
