@@ -15,7 +15,7 @@ class MODEL(Resource):
     def post(self):
         json_data = request.get_json(force=True)
         model = json_data["model"]
-        input = json_data["input"]
+        input = json_data["text_input_list"]
         print(f"======INPUT TO {model}=====", flush=True)
         print(input, sep="\n", flush=True)
         if model == "GECToR-Roberta":
@@ -32,7 +32,7 @@ class MODEL(Resource):
         return jsonify(
             {
                 'model' : model,
-                'output' : output
+                'text_output_list' : output
             }
         )
         # fmt: on

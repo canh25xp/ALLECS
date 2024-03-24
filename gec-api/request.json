@@ -1,6 +1,6 @@
 {
   "model": "GECToR-Roberta",
-  "input": [
+  "text_input_list": [
     "He do this",
     "I is a engineer",
     "The quick brown fox jump over the lazy dog"
