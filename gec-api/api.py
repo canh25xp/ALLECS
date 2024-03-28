@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_restful import Api, Resource
+from json import dumps
 
 import components.gector.predict as gector
 
@@ -16,8 +17,7 @@ class MODEL(Resource):
         json_data = request.get_json(force=True)
         model = json_data["model"]
         input = json_data["text_input_list"]
-        print(f"======INPUT TO {model}=====", flush=True)
-        print(input, sep="\n", flush=True)
+        print(dumps(json_data, indent=4, sort_keys=True))
         if model == "GECToR-Roberta":
             output = gector.predict_for_demo(input, model_gector_roberta)
         elif model == "GECToR-XLNet":
@@ -26,16 +26,19 @@ class MODEL(Resource):
             output = "Unsupported"
         else:
             raise NotImplementedError(f"Model {model} is not recognized.")
-        print(f"======OUTPUT FROM {model}=====", flush=True)
-        print(output, sep="\n", flush=True)
+
         # fmt: off
-        return jsonify(
+        output_json = jsonify(
             {
-                'model' : model,
-                'text_output_list' : output
+                "model": model,
+                "text_output_list": output
             }
         )
         # fmt: on
+
+        print(dumps(output_json.json, indent=4, sort_keys=True))
+
+        return output_json
 
 
 api.add_resource(MODEL, "/components/model")
