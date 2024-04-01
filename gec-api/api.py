@@ -1,8 +1,13 @@
 from flask import Flask, jsonify, request
 from flask_restful import Api, Resource
 from json import dumps
+import sys
+import os
 
-import components.gector.predict as gector
+current_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.join(current_dir, 'components/gector'))
+
+import predict as gector
 
 
 app = Flask(__name__)
