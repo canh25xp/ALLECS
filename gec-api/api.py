@@ -21,9 +21,9 @@ class MODEL(Resource):
         if model == "GECToR-Roberta":
             output = gector.predict_for_demo(input, model_gector_roberta)
         elif model == "GECToR-XLNet":
-            output = "Unsupported"
+            output = ["Unsupported"]
         elif model == "T5-Large":
-            output = "Unsupported"
+            output = ["Unsupported"]
         else:
             raise NotImplementedError(f"Model {model} is not recognized.")
 
