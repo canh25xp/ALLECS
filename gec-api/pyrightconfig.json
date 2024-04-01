@@ -2,7 +2,9 @@
   "exclude": [
     "**/__pycache__",
   ],
-  "extraPaths": [],
+  "extraPaths": [
+    "components/gector"
+  ],
   "typeCheckingMode": "basic",
   "reportMissingImports": true,
   "reportUnusedImport": false,
