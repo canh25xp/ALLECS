@@ -1,0 +1,3 @@
+[submodule "gec-api/components/gector"]
+	path = gec-api/components/gector
+	url = https://github.com/canh25xp/gector
